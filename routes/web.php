@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing-page');
 });
+Route::get('/login', function () {
+    return view('auth.login');
+});
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::get('/register', function () {
+    return view('auth.register');
+});
+Route::get('/search-book', function () {
+    return view('cari-buku');
+});
+Route::get('/detail-book ', function () {
+    return view('detail-buku');
+});
