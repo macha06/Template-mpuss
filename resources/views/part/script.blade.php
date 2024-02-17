@@ -5,3 +5,7 @@
 <!-- Need: Apexcharts -->
 <script src="{{ asset('') }}assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="{{ asset('') }}assets/static/js/pages/dashboard.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>

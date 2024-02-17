@@ -5,7 +5,7 @@ let customized_datatable = $("#table2").DataTable({
     responsive: true,
     pagingType: 'simple',
     dom:
-		"<'row'<'col-3'l><'col-9'f>>" +
+		"<'row'<'col-2'l><'col-10'f>>" +
 		"<'row dt-row'<'col-sm-12'tr>>" +
 		"<'row'<'col-4'i><'col-8'p>>",
     "language": {

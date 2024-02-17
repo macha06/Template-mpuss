@@ -44,7 +44,7 @@
                 
                 <li
                     class="sidebar-item active ">
-                    <a href="{{ url('admin/dashboard') }}" class='sidebar-link'>
+                    <a href="{{ url('peminjam/dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -52,36 +52,30 @@
     
                 </li>
                 
-                <li class="sidebar-title">Data Master</li>
+                <li class="sidebar-title">Perpustakaan</li>
                 
                 <li
                     class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-hexagon-fill"></i>
-                        <span>Data</span>
+                        <span>Perpustakaan</span>
                     </a>
                     
                     <ul class="submenu ">
                         
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/user') }}" class="submenu-link">Data User</a>
+                            <a href="{{ url('peminjam/buku') }}" class="submenu-link">Daftar Buku</a>
                             
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/buku') }}" class="submenu-link">Data Buku</a>
+                            <a href="{{ url('peminjam/buku/pinjaman') }}" class="submenu-link">Buku Pinjaman</a>
                             
                         </li>
                         
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/peminjam') }}" class="submenu-link">Data Peminjam</a>
+                            <a href="{{ url('peminjam/koleksi') }}" class="submenu-link">Koleksi Pribadi</a>
                             
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ url('admin/kategori') }}" class="submenu-link">Data Kategori buku</a>
-                            
-                        </li>
-                        
+                        </li>                      
                     </ul>
                 </li>  
                 <li class="sidebar-title">misc</li>

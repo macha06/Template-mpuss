@@ -4,13 +4,13 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Data User</h3>
+                <h3>Buku Pinjaman</h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">User</li>
+                        <li class="breadcrumb-item active" aria-current="page">Buku Pinjaman</li>
                     </ol>
                 </nav>
             </div>
@@ -23,10 +23,6 @@
             <div class="card">
                 <div class="card-header ">
                     <div class="d-flex justify-content-between">
-                        <h5 class="card-title">
-                            Table User
-                        </h5>
-                        <a href="{{ url('admin/user/create') }}" class="btn btn-primary">Tambah Data</a>
                     </div>
                     <div class="form-outline" data-mdb-input-init>
                         <input type="search" id="form1" class="form-control mt-3" placeholder="Search...." aria-label="Search" />
@@ -37,32 +33,23 @@
                         <table class="table" id="table2">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>NIK</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Nomor Telepon</th>
-                                    <th>Alamat</th>
-                                    <th>Akses</th>
+                                    <th>#</th>
+                                    <th>Judul Buku</th>
+                                    <th>Tanggal Peminjaman</th>
+                                    <th>Tanggal Dikembalikan</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>143223</td>
-                                    <td>Fathur Rahman Sidiq</td>
-                                    <td>Machaxman</td>
-                                    <td>macha@gmail.com</td>
-                                    <td>(016977) 8208</td>
-                                    <td>Tangerang</td>
+                                    <td>Cinderlela</td>
+                                    <td>2-3-2004</td>
+                                    <td>3-4-2006</td>
+                                    <td>Belum Dikembalikan</td>
                                     <td>
-                                        <span class="badge bg-success">Admin</span>
-                                    </td>
-                                    <td>
-                                        <a href="{{ url('admin/user/update') }}" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="" class="btn btn-success">Kembalikan</a>
                                     </td>
                                 </tr>
                             </tbody>

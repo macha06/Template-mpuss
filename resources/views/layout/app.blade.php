@@ -10,8 +10,9 @@
 
 <body>
     <div id="app">
-        @include('layout.sidebar')
+        @include('layout.sidebar_peminjam')
         <div id="main">
+            @include('layout.header')
             @yield('konten')
             @include('layout.footer')
         </div>
