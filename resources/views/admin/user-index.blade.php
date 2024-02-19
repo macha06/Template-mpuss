@@ -26,7 +26,9 @@
                         <h5 class="card-title">
                             Table User
                         </h5>
+                        @if (Auth::user()->akses == 'admin')           
                         <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah Data</a>
+                        @endif
                     </div>
                     <div class="form-outline" data-mdb-input-init>
                         <input type="search" id="form1" class="form-control mt-3" placeholder="Search...." aria-label="Search" />
@@ -45,7 +47,9 @@
                                     <th>Nomor Telepon</th>
                                     <th>Alamat</th>
                                     <th>Akses</th>
-                                    <th>Aksi</th>
+                                    @if (Auth::user()->akses == 'admin')   
+                                    <th>Aksi</th>        
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +57,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nik }}</td>
+                                    <td>{{ $item->name }}</td>
                                     <td>{{ $item->username }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>{{ $item->telepon }}</td>
@@ -60,10 +65,12 @@
                                     <td>
                                         <span class="badge bg-success">{{ $item->akses }}</span>
                                     </td>
+                                    @if (Auth::user()->akses == 'admin')           
                                     <td>
                                         <a href="{{ url('admin/user/update') }}" class="btn btn-warning">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
+                                    @endif
                                 </tr>
                                 @endforeach
                             </tbody>

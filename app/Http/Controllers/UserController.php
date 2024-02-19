@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $model = Model::latest()->paginate(10);
-        return view('admin.user-index', compact('model'));
+        return view('admin.user-index')->with('model', $model);
     }
 
     /**
@@ -21,10 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $data = [
-            'model' => new Model
-        ];
-        return view('admin.user-create', $data);
+        return view('admin.user-create');
     }
 
     /**
@@ -32,9 +29,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $requestdata = $request->all();
-        Model::create($requestdata);
-        return redirect('/admin/user');
+        Model::create($request->all());
+        return redirect()->route('user.index')
+                ->withSuccess('New product is added successfully.');
     }
 
     /**

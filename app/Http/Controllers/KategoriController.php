@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Kategori as Model;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -12,8 +12,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::latest()->paginate(10);
-        return view('admin.kategori-index', compact('kategori'));
+        $model = Model::all();
+        return view('admin.kategori-index')->with('model', $model);
     }
 
     /**

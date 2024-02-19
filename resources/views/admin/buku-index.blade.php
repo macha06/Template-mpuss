@@ -26,7 +26,7 @@
                         <h5 class="card-title">
                             Table Buku
                         </h5>
-                        <a href="{{ url('admin/buku/create') }}" class="btn btn-primary">Tambah data</a>
+                        <a href="{{ route('buku.create') }}" class="btn btn-primary">Tambah data</a>
                     </div>
                     <a href="{{ url('admin/buku/create') }}" class="btn btn-primary">Cetak Laporan data Buku</a>
                     <div class="form-outline" data-mdb-input-init>
@@ -51,24 +51,26 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($model as $item)     
                                 <tr>
-                                    <td>1</td>
-                                    <td>Anjay</td>
-                                    <td>Fathur Rahman Sidiq</td>
-                                    <td>Machaxman</td>
-                                    <td>5 Mei 2000</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->judul }}</td>
+                                    <td>{{ $item->penulis }}</td>
+                                    <td>{{ $item->penerbit }}</td>
+                                    <td>{{ $item->tahun_terbit }}</td>
                                     <td>
-                                        <img src="{{ asset('assets/img/book-1.jpg') }}" width="100" alt="">
+                                        <img src="{{ asset('storage/'.$item->gambar) }}" width="100" alt="">
                                     </td>
-                                    <td>Gooodd</td>
-                                    <td>Romance</td>
-                                    <td>15</td>
+                                    <td>{{ $item->deskripsi }}</td>
+                                    <td>{{ $item->id_kategori }}</td>
+                                    <td>{{ $item->stok }}</td>
                                     <td>
                                         <a href="{{ url('admin/buku/update') }}" class="btn btn-warning">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                         <a href="" class="btn btn-primary">Lihat Ulasan</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -43,8 +43,10 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-        if($user->akses == 'petugas' || $user->akses == 'admin'){
+        if($user->akses == 'petugas'){
             return redirect()->route('petugas.beranda');
+        } elseif($user->akses == 'admin'){
+            return redirect()->route('admin.beranda');
         } elseif($user->akses == 'peminjam'){
             return redirect()->route('peminjam.beranda');
         } else{

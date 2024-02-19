@@ -26,14 +26,13 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-vertical">
+                        <form class="form form-vertical" action="{{ route('user.store') }}" method="post">
+                            @csrf
                             <div class="form-body">
                                 <div class="row">
-                                    <form action="{{ route('user.store') }}" method="POST"></form>
-                                    @csrf
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="first-name-vertical">Nama Lengkap</label>
+                                            <label for="name">Nama Lengkap</label>
                                             <input type="text" id="first-name-vertical" class="form-control"
                                                 name="name" placeholder="Nama Lengkap">
                                         </div>
@@ -47,35 +46,42 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="email-id-vertical">Email</label>
+                                            <label for="nik">Nik</label>
+                                            <input type="text" id="first-name-vertical" class="form-control"
+                                                name="nik" placeholder="Nik">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
                                             <input type="email" id="email-id-vertical" class="form-control"
                                                 name="email" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="contact-info-vertical">Phone</label>
+                                            <label for="telepon">Phone</label>
                                             <input type="number" id="contact-info-vertical" class="form-control"
                                                 name="telepon" placeholder="Nomor Hp">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="password-vertical">Password</label>
+                                            <label for="password">Password</label>
                                             <input type="password" id="password-vertical" class="form-control"
                                                 name="password" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="first-name-vertical">Alamat</label>
+                                            <label for="alamat">Alamat</label>
                                             <input type="text" id="first-name-vertical" class="form-control"
                                                 name="alamat" placeholder="Alamat">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="first-name-vertical">Role</label>
+                                            <label for="akses">Role</label>
                                             <select class="form-select" name="akses" aria-label="Default select example">
                                                 <option selected>Akses</option>
                                                 <option value="admin">Admin</option>
@@ -94,9 +100,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        {!! Form::submit("SIMPAN", ['class' => 'btn btn-primary']) !!}
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                     </div>
-                                </form>
                                 </div>
                             </div>
                         </form>

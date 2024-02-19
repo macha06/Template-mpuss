@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buku as Model;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -11,7 +13,9 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $model = Model::all();
+        $models = Kategori::all();
+        return view('admin.buku-index')->with('model', $model)->with('models', $models);
     }
 
     /**
