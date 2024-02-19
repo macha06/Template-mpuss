@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\User as Model;
 
 class UserController extends Controller
 {
@@ -12,8 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->paginate(10);
-        return view('admin.user-index', compact('users'));
+        $model = Model::latest()->paginate(10);
+        return view('admin.user-index', compact('model'));
     }
 
     /**
@@ -21,7 +21,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user-create');
+        $data = [
+            'model' => new Model
+        ];
+        return view('admin.user-create', $data);
     }
 
     /**
@@ -29,20 +32,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'username' => 'required',
-            'password' => 'required',
-            'akses' => 'required',
-            'alamat' => 'required',
-            'nik' => 'required',
-            'telepon' => 'required',
-        ]);
-  
-        User::create($request->all());
-   
-        return redirect()->route('user')->with('success','Product created successfully.');    
+        $requestdata = $request->all();
+        Model::create($requestdata);
+        return redirect('/admin/user');
     }
 
     /**

@@ -49,7 +49,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $item)  
+                                @foreach ($model as $item)  
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nik }}</td>
@@ -67,7 +67,7 @@
                                 </tr>
                                 @endforeach
                             </tbody>
-                            {{ $users->links() }}
+                            {{ $model->links() }}
                         </table>
                     </div>
                 </div>

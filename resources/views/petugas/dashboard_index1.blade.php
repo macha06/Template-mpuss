@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('konten')
 <div class="page-heading">
-    <h3>Halo Petugas</h3>
+    <h3>Halo Admin</h3>
 </div> 
 <div class="page-content"> 
     <section class="row">

@@ -29,7 +29,7 @@
                         <form class="form form-vertical">
                             <div class="form-body">
                                 <div class="row">
-                                    {!! Form::model( ['route' => 'user.create', 'method' => 'POST']) !!}
+                                    <form action="{{ route('user.store') }}" method="POST"></form>
                                     @csrf
                                     <div class="col-12">
                                         <div class="form-group">
@@ -94,9 +94,9 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        {!! Form::submit('SIMPAN', ['class' => 'btn btn-primary']) !!}
+                                        {!! Form::submit("SIMPAN", ['class' => 'btn btn-primary']) !!}
                                     </div>
-                                    {!! Form::close() !!}
+                                </form>
                                 </div>
                             </div>
                         </form>

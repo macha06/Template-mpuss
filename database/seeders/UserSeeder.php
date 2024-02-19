@@ -15,16 +15,43 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('user')->insert([
-            'name' => 'fathur',
-            'username' => 'macha',
-            'email' => 'macha@gmail.com',
-            'password'=> bcrypt('123'),
-            'alamat'=> 'tangerang',
-            'telepon'=> '12345678',
-            'akses'=> 'admin',
-            'nik'=> '1234567890',
-            'email_verified_at' => now(),
+        User::create([
+            'name' => 'admin',
+            'email' => 'lJ1eA@example.com',
+            'username' => 'admin',
+            'password' => Hash::make('admin'),
+            'akses' => 'admin',
+            'alamat' => 'tangerang',
+            'nik' => '123123123',
+            'telepon' => '4234234',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        User::create([
+            'name' => 'Petugas',
+            'email' => 'petugas@gmail.com',
+            'username' => 'Petugas',
+            'password' => Hash::make('petugas'),
+            'akses' => 'petugas',
+            'alamat' => 'tangerang',
+            'nik' => '432342423',
+            'telepon' => '6547567',
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        User::create([
+            'name' => 'Peminjam',
+            'email' => 'peminjam@gmail.com',
+            'username' => 'Peminjam',
+            'password' => Hash::make('peminjam'),
+            'akses' => 'peminjam',
+            'alamat' => 'tangerang',
+            'nik' => '97987978',
+            'telepon' => '5464566',
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }
