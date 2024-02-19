@@ -26,9 +26,9 @@
         <li><a href="pages/service.html">Layanan</a></li>
         <li><a href="pages/contact.html">Kontak</a></li>
         <li><a href="{{ url('search-book') }}">Buku</a></li>
-        <button class="login"><a href="{{ url('login') }}" >Log In</a></button>
+        <button class="login"><a href="{{ route('login') }}" >Log In</a></button>
         <button class="signup">
-          <i class="fa-solid fa-user"></i><a href="{{ url('register') }}">Sign Up</a>
+          <i class="fa-solid fa-user"></i><a href="{{ route('register') }}">Sign Up</a>
         </button>
       </ul>
       <div class="hamburger">

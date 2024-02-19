@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M-puss</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     @include('part.link')
 </head>
 
@@ -13,6 +13,7 @@
         @include('layout.sidebar_peminjam')
         <div id="main">
             @include('layout.header')
+            @include('fal')
             @yield('konten')
             @include('layout.footer')
         </div>

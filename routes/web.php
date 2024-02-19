@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PeminjamBerandaController;
+use App\Http\Controllers\PetugasBerandaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing-page');
 });
-Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::get('/register', function () {
-    return view('auth.register');
-});
+#Route::get('/login', function () {
+   # return view('auth.login');
+#});
+#Route::get('/register', function () {
+    #return view('auth.register');
+#});
 
 #admin
 Route::get('/admin/dashboard', function () {
@@ -87,4 +90,21 @@ Route::get('/search-book', function () {
 });
 Route::get('/detail-book ', function () {
     return view('detail-buku');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
+
+});
+Route::prefix('petugas')->middleware(['auth', 'auth.petugas'])->group(function () {
+    Route::get('beranda', [PetugasBerandaController::class, 'index'])->name('petugas.beranda');
+});
+Route::prefix('peminjam')->middleware(['auth', 'auth.peminjam'])->group(function () {
+    Route::get('beranda', [PeminjamBerandaController::class, 'index'])->name('peminjam.beranda');
+});
+Route::get('logout', function () {
+    Auth::logout();
 });
