@@ -26,7 +26,7 @@
                         <h5 class="card-title">
                             Table User
                         </h5>
-                        <a href="{{ url('admin/user/create') }}" class="btn btn-primary">Tambah Data</a>
+                        <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah Data</a>
                     </div>
                     <div class="form-outline" data-mdb-input-init>
                         <input type="search" id="form1" class="form-control mt-3" placeholder="Search...." aria-label="Search" />
@@ -49,23 +49,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($users as $item)  
                                 <tr>
-                                    <td>1</td>
-                                    <td>143223</td>
-                                    <td>Fathur Rahman Sidiq</td>
-                                    <td>Machaxman</td>
-                                    <td>macha@gmail.com</td>
-                                    <td>(016977) 8208</td>
-                                    <td>Tangerang</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->nik }}</td>
+                                    <td>{{ $item->username }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->telepon }}</td>
+                                    <td>{{ $item->alamat }}</td>
                                     <td>
-                                        <span class="badge bg-success">Admin</span>
+                                        <span class="badge bg-success">{{ $item->akses }}</span>
                                     </td>
                                     <td>
                                         <a href="{{ url('admin/user/update') }}" class="btn btn-warning">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
+                            {{ $users->links() }}
                         </table>
                     </div>
                 </div>

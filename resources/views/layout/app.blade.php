@@ -10,10 +10,10 @@
 
 <body>
     <div id="app">
-        @include('layout.sidebar_peminjam')
+        @include('layout.sidebar')
         <div id="main">
             @include('layout.header')
-            @include('fal')
+            @include('flash::message')
             @yield('konten')
             @include('layout.footer')
         </div>

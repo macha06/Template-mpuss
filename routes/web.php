@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamBerandaController;
 use App\Http\Controllers\PetugasBerandaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -99,6 +101,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
 
 });
+Route::resource('user', UserController::class);
+Route::resource('buku', UserController::class);
+Route::resource('kategori', KategoriController::class);
+
 Route::prefix('petugas')->middleware(['auth', 'auth.petugas'])->group(function () {
     Route::get('beranda', [PetugasBerandaController::class, 'index'])->name('petugas.beranda');
 });

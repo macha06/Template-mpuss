@@ -8,6 +8,6 @@ class PetugasBerandaController extends Controller
 {
     public function index()
     {
-        return view('petugas.dashboard-index');
+        return view('petugas.dashboard_index');
     }
 }

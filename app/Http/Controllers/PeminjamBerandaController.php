@@ -8,6 +8,6 @@ class PeminjamBerandaController extends Controller
 {
     public function index()
     {
-        return view('peminjam.dashboard-index');
+        return view('peminjam.dashboard_index');
     }
 }

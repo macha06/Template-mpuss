@@ -43,14 +43,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($kategori as $item)    
                                 <tr>
-                                    <td>1</td>
-                                    <td>Romance</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->nama_kategori }}</td>
                                     <td>
                                         <a href="{{ url('admin/kategori/update') }}" class="btn btn-warning">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

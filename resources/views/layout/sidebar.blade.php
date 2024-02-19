@@ -43,7 +43,7 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item active ">
+                    class="sidebar-item">
                     <a href="{{ url('admin/dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
@@ -61,10 +61,10 @@
                         <span>Data</span>
                     </a>
                     
-                    <ul class="submenu ">
+                    <ul class="submenu {{ Request::routeIs('user.*') ? 'active' : '' }}">
                         
-                        <li class="submenu-item  ">
-                            <a href="{{ url('admin/user') }}" class="submenu-link">Data User</a>
+                        <li class="submenu-item">
+                            <a href="{{ route('user.index') }}" class="submenu-link">Data User</a>
                             
                         </li>
                         <li class="submenu-item  ">
@@ -78,7 +78,7 @@
                         </li>
                         
                         <li class="submenu-item  ">
-                            <a href="{{ url('admin/kategori') }}" class="submenu-link">Data Kategori buku</a>
+                            <a href="{{ route('user.index') }}" class="submenu-link">Data Kategori buku</a>
                             
                         </li>
                         

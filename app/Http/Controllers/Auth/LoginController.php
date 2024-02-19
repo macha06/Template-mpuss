@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
 class LoginController extends Controller
@@ -26,7 +27,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -43,7 +43,11 @@ class LoginController extends Controller
         if($user->akses == 'petugas' || $user->akses == 'admin'){
             return redirect()->route('petugas.beranda');
         } elseif($user->akses == 'peminjam'){
-
+            return redirect()->route('peminjam.beranda');
+        } else{
+            Auth::logout();
+            flash('anda Tidak memiliki hak akses')->error();
+            return redirect()->route('login');
         }
     }
 }
