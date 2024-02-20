@@ -220,15 +220,15 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item {{ \Route::is('peminjam.dashboard') ? 'active' : '' }}">
-                    <a href="" class='sidebar-link'>
+                    class="sidebar-item {{ \Route::is('peminjam.beranda') ? 'active' : '' }}">
+                    <a href="{{ route('peminjam.beranda') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li
-                    class="sidebar-item {{ \Route::is('buku.*') ? 'active' : '' }}">
-                    <a href="{{ route('buku.index') }}" class='sidebar-link'>
+                    class="sidebar-item {{ \Route::is('bukus.*') ? 'active' : '' }}">
+                    <a href="{{ route('bukus.index') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Daftar Buku</span>
                     </a>

@@ -4,7 +4,7 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>daftar Buku</h3>
+                <h3>Detail Buku</h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -37,7 +37,7 @@
                     <label for="" style="font-weight:bold;" class="mb-3">Tahun Terbit :</label>
                     <span class="badge bg-danger">{{ $model->tahun_terbit }}</span><hr><br>
                     <div class="d-grid gap-2">
-                        <a href="{{ route('buku.index') }}" class="btn btn-danger">Kembali</a>
+                        <a href="{{ route('bukus.index') }}" class="btn btn-danger">Kembali</a>
                         <a href="{{ url('peminjam/buku/ulasan') }}" class="btn btn-info">Berikan Ulasan</a>
                       </div>
                 </div>

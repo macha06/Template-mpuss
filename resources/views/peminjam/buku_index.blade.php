@@ -55,8 +55,8 @@
                                     <td>{{ $item->judul }}</td>
                                     <td>{{ $item->penulis }}</td>
                                     <td>
-                                        <a href="{{ route('buku.show', $item->id) }}" class="btn btn-info">Detail</a>
-                                        <a href="" class="btn btn-primary">Pinjam</a>
+                                        <a href="{{ route('bukus.show', $item->id) }}" class="btn btn-info">Detail</a>
+                                        <a href="{{ route('bukus.edit', $item->id) }}" class="btn btn-primary">Pinjam</a>
                                         <a href="" class="btn btn-success">Tambahkan ke Koleksi</a>
                                     </td>
                                 </tr>

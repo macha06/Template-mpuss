@@ -53,7 +53,7 @@ Route::prefix('petugas')->middleware(['auth', 'auth.petugas'])->group(function (
 });
 Route::prefix('peminjam')->middleware(['auth', 'auth.peminjam'])->group(function () {
     Route::get('beranda', [PeminjamBerandaController::class, 'index'])->name('peminjam.beranda');
-    Route::resource('buku', BukuPeminjamController::class);
+    Route::resource('bukus', BukuPeminjamController::class);
 });
 Route::get('logout', function () {
     Auth::logout();
