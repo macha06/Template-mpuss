@@ -44,47 +44,36 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item">
-                    <a href="" class='sidebar-link'>
+                    class="sidebar-item {{ \Route::is('admin.beranda') ? 'active' : '' }}">
+                    <a href="{{ route('admin.beranda') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
-                    
-    
                 </li>
                 
                 <li class="sidebar-title">Data Master</li>
                 
                 <li
-                    class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-hexagon-fill"></i>
-                        <span>Data</span>
+                    class="sidebar-item {{ \Route::is('user.*') ? 'active' : '' }}">
+                    <a href="{{ route('user.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data User</span>
                     </a>
-                    
-                    <ul class="submenu {{ Request::routeIs('user.*') ? 'active' : '' }}">
-                        
-                        <li class="submenu-item">
-                            <a href="{{ route('user.index') }}" class="submenu-link">Data User</a>
-                            
-                        </li>
-                        <li class="submenu-item  ">
-                            <a href="{{ route('buku.index') }}" class="submenu-link">Data Buku</a>
-                            
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ url('admin/peminjam') }}" class="submenu-link">Data Peminjam</a>
-                            
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ route('kategori.index') }}" class="submenu-link">Data Kategori buku</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </li>  
+                </li>
+                <li
+                    class="sidebar-item {{ \Route::is('buku.*') ? 'active' : '' }}">
+                    <a href="{{ route('buku.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Buku</span>
+                    </a>
+                </li> 
+                <li
+                    class="sidebar-item {{ \Route::is('peminjam.*') ? 'active' : '' }}">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Peminjaman</span>
+                    </a>
+                </li> 
                 <li class="sidebar-title">misc</li>
                 <li
                     class="sidebar-item  ">
@@ -143,47 +132,36 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item">
-                    <a href="" class='sidebar-link'>
+                    class="sidebar-item {{ \Route::is('petugas.beranda') ? 'active' : '' }}">
+                    <a href="{{ route('petugas.beranda') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
-                    
-    
                 </li>
                 
                 <li class="sidebar-title">Data Master</li>
                 
                 <li
-                    class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-hexagon-fill"></i>
-                        <span>Data</span>
+                    class="sidebar-item {{ \Route::is('peminjam.*') ? 'active' : '' }}">
+                    <a href="{{ route('peminjam.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Peminjam</span>
                     </a>
-                    
-                    <ul class="submenu {{ Request::routeIs('user.*') ? 'active' : '' }}">
-                        
-                        <li class="submenu-item">
-                            <a href="{{ route('user.index') }}" class="submenu-link">Data User</a>
-                            
-                        </li>
-                        <li class="submenu-item  ">
-                            <a href="{{ route('buku.index') }}" class="submenu-link">Data Buku</a>
-                            
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ url('admin/peminjam') }}" class="submenu-link">Data Peminjam</a>
-                            
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ route('user.index') }}" class="submenu-link">Data Kategori buku</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </li>  
+                </li>
+                <li
+                    class="sidebar-item {{ \Route::is('buku.*') ? 'active' : '' }}">
+                    <a href="{{ route('buku.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Buku</span>
+                    </a>
+                </li> 
+                <li
+                    class="sidebar-item {{ \Route::is('peminjaman.*') ? 'active' : '' }}">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Peminjaman</span>
+                    </a>
+                </li> 
                 <li class="sidebar-title">misc</li>
                 <li
                     class="sidebar-item  ">
@@ -242,41 +220,35 @@
                 <li class="sidebar-title">Menu</li>
                 
                 <li
-                    class="sidebar-item active ">
-                    <a href="{{ url('peminjam/dashboard') }}" class='sidebar-link'>
+                    class="sidebar-item {{ \Route::is('peminjam.dashboard') ? 'active' : '' }}">
+                    <a href="" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
-                    
-    
+                </li>
+                <li
+                    class="sidebar-item {{ \Route::is('buku.*') ? 'active' : '' }}">
+                    <a href="{{ route('buku.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Daftar Buku</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Buku Pinjaman</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item">
+                    <a href="" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Koleksi Pribadi</span>
+                    </a>
                 </li>
                 
-                <li class="sidebar-title">Perpustakaan</li>
-                
-                <li
-                    class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-hexagon-fill"></i>
-                        <span>Perpustakaan</span>
-                    </a>
-                    
-                    <ul class="submenu ">
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ url('peminjam/buku') }}" class="submenu-link">Daftar Buku</a>
-                            
-                        </li>
-                        <li class="submenu-item  ">
-                            <a href="{{ url('peminjam/buku/pinjaman') }}" class="submenu-link">Buku Pinjaman</a>
-                            
-                        </li>
-                        
-                        <li class="submenu-item  ">
-                            <a href="{{ url('peminjam/koleksi') }}" class="submenu-link">Koleksi Pribadi</a>
-                            
-                        </li>                      
-                    </ul>
-                </li>  
+                <li class="sidebar-title">Perpustakaan</li> 
                 <li class="sidebar-title">misc</li>
                 <li
                     class="sidebar-item  ">

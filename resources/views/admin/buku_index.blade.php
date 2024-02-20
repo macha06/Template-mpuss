@@ -9,7 +9,7 @@
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.beranda') }}">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Buku</li>
                     </ol>
                 </nav>
@@ -59,15 +59,19 @@
                                     <td>{{ $item->penerbit }}</td>
                                     <td>{{ $item->tahun_terbit }}</td>
                                     <td>
-                                        <img src="{{ asset('storage/'.$item->gambar) }}" width="100" alt="">
+                                        <img src="{{ Storage::url('public/buku/').$item->gambar }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $item->deskripsi }}</td>
-                                    <td>{{ $item->id_kategori }}</td>
+                                    <td>{{ $item->kategori }}</td>
                                     <td>{{ $item->stok }}</td>
-                                    <td>
-                                        <a href="{{ url('admin/buku/update') }}" class="btn btn-warning">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
-                                        <a href="" class="btn btn-primary">Lihat Ulasan</a>
+                                    <td>                 
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('buku.destroy', $item->id) }}" method="POST">
+                                            <a href="{{ route('buku.edit', $item->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                                            <a href="" class="btn btn-sm btn-primary">Lihat Ulasan</a>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

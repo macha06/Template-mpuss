@@ -26,8 +26,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-vertical" action="{{ route($route, $models->id) }} method="post" enctype="multipart/form-data">
-                            @method('PUT')
+                        {!! Form::model($models, ['route' => ['user.update', $models->id], 'method' => 'PUT']) !!}
                             @csrf
                             <div class="form-body">
                                 <div class="row">
@@ -81,6 +80,18 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
+                                            <label for="Password">Password</label>
+                                            <input type="password" id="first-name-vertical" class="form-control"
+                                                name="password">
+                                            @error('password')
+                                                <div class="alert alert-danger mt-2">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
                                             <label for="akses">Role</label>
                                             <select class="form-select" name="akses" aria-label="Default select example">
                                                 <option selected>{{ $models->akses}}</option>
@@ -116,7 +127,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

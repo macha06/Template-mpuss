@@ -19,12 +19,36 @@
 </div> 
 <div class="page-content"> 
     <section class="row">
-        <div class="col-12 col-lg-12">
+        <div class="col-2 col-lg-2">
+            <div class="card">
+                <div class="card-header ">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title mb-3 text-center">
+                            Detail Buku
+                        </h5>
+                    </div> 
+                </div>
+                <div class="card-body">
+                    <img src="{{ Storage::url('public/buku/').$model->gambar }}" class="rounded mb-3" style="width: 190px">
+                    <label for="" style="font-weight:bold;" class="mb-3">Penulis :</label>
+                    <span class="badge bg-primary">{{ $model->penulis }}</span><hr><br>
+                    <label for="" style="font-weight:bold;" class="mb-3">Penerbit :</label>
+                    <span class="badge bg-success">{{ $model->penerbit }}</span><hr><br>
+                    <label for="" style="font-weight:bold;" class="mb-3">Tahun Terbit :</label>
+                    <span class="badge bg-danger">{{ $model->tahun_terbit }}</span><hr><br>
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('buku.index') }}" class="btn btn-danger">Kembali</a>
+                        <a href="{{ url('peminjam/buku/ulasan') }}" class="btn btn-info">Berikan Ulasan</a>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 col-lg-10">
             <div class="card">
                 <div class="card-header ">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title">
-                            Daftar Buku
+                            Ulasan
                         </h5>
                     </div>
                     <div class="form-outline" data-mdb-input-init>
@@ -36,28 +60,16 @@
                         <table class="table" id="table2">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Cover</th>
-                                    <th>Kategori</th>
-                                    <th>Judul</th>
-                                    <th>Penulis</th>
-                                    <th>Aksi</th>
+                                    <th>Ulasan</th>
+                                    <th>Rating</th>
+                                    <th>pemberi Ulasan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img src="{{ asset('assets/img/book-1.jpg') }}" width="100" alt="">
-                                    </td>
-                                    <td>Romance</td>
-                                    <td>Cinderlela</td>
+                                    <td>Sedih banget</td>
+                                    <td>5</td>
                                     <td>Macha</td>
-                                    <td>
-                                        <a href="{{ url('peminjam/buku/detail') }}" class="btn btn-info">Detail</a>
-                                        <a href="" class="btn btn-primary">Pinjam</a>
-                                        <a href="" class="btn btn-success">Tambahkan ke Koleksi</a>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>

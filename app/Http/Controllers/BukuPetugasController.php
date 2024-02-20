@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Buku as Model;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
-
-class BukuController extends Controller
+class BukuPetugasController extends Controller
 {
     /**
      * Display a listing of the resource.

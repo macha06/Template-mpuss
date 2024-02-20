@@ -19,35 +19,12 @@
 </div> 
 <div class="page-content"> 
     <section class="row">
-        <div class="col-2 col-lg-2">
-            <div class="card">
-                <div class="card-header ">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title mb-3 text-center">
-                            Detail Buku
-                        </h5>
-                    </div> 
-                </div>
-                <div class="card-body">
-                    <label for="" style="font-weight:bold;" class="mb-3">Penulis :</label>
-                    <span class="badge bg-primary">Macha</span><hr><br>
-                    <label for="" style="font-weight:bold;" class="mb-3">Penerbit :</label>
-                    <span class="badge bg-success">Macha Corp</span><hr><br>
-                    <label for="" style="font-weight:bold;" class="mb-3">Tahun Terbit :</label>
-                    <span class="badge bg-danger">2005</span><hr><br>
-                    <div class="d-grid gap-2">
-                        <a href="{{ url('peminjam/buku') }}" class="btn btn-danger">Kembali</a>
-                        <a href="{{ url('peminjam/buku/ulasan') }}" class="btn btn-info">Berikan Ulasan</a>
-                      </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-10 col-lg-10">
+        <div class="col-12 col-lg-12">
             <div class="card">
                 <div class="card-header ">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title">
-                            Ulasan
+                            Daftar Buku
                         </h5>
                     </div>
                     <div class="form-outline" data-mdb-input-init>
@@ -59,17 +36,31 @@
                         <table class="table" id="table2">
                             <thead>
                                 <tr>
-                                    <th>Ulasan</th>
-                                    <th>Rating</th>
-                                    <th>pemberi Ulasan</th>
+                                    <th>#</th>
+                                    <th>Cover</th>
+                                    <th>Kategori</th>
+                                    <th>Judul</th>
+                                    <th>Penulis</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($model as $item)                   
                                 <tr>
-                                    <td>Sedih banget</td>
-                                    <td>5</td>
-                                    <td>Macha</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>
+                                        <img src="{{ Storage::url('public/buku/').$item->gambar }}" class="rounded" style="width: 150px">
+                                    </td>
+                                    <td>{{ $item->kategori }}</td>
+                                    <td>{{ $item->judul }}</td>
+                                    <td>{{ $item->penulis }}</td>
+                                    <td>
+                                        <a href="{{ route('buku.show', $item->id) }}" class="btn btn-info">Detail</a>
+                                        <a href="" class="btn btn-primary">Pinjam</a>
+                                        <a href="" class="btn btn-success">Tambahkan ke Koleksi</a>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

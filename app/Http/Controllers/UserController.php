@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user_create',[
+        return view('admin.user_form',[
             'models' => new Model(),
             'method' => 'POST',
             'title' => 'Create Data User',
@@ -96,7 +96,6 @@ class UserController extends Controller
         return view('admin.user_update',[
             'models' => Model::findOrfail($id),
             'title' => 'Update Data User',
-            'route' => 'user.update',
             'button' => 'UPDATE',
         ]);
             
@@ -107,16 +106,35 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $id;
+        $requestData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email,'.$id,
+            'akses' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+            'password' => 'nullable',
+        ]);
+        $model = Model::findOrFail($id);
+        if ($requestData['password'] == ""){
+            unset($requestData['password']);
+        }else{
+            $requestData['password'] = Hash::make($requestData['password']);
+        }
+        $model->fil($requestData);
+        $model->save();
+        Alert::success('Hore!', 'data berhasil diupdate');
+        return redirect()
+            ->route('user.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        $user->delete();
-        Alert::success('Hore!', 'data berhasil disimpan!');
+        $model = Model::findOrFail($id);
+        $model->delete();
+        Alert::success('Hore!', 'data berhasil di hapus!');
         return redirect()
             ->route('user.index');
     }
