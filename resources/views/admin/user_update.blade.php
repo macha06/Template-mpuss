@@ -26,9 +26,9 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-vertical" action="{{ route('user.update', $models->id) }}">
-                            @csrf
+                        <form class="form form-vertical" action="{{ route($route, $models->id) }} method="post" enctype="multipart/form-data">
                             @method('PUT')
+                            @csrf
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-12">
@@ -61,18 +61,6 @@
                                             <input type="number" id="contact-info-vertical" class="form-control"
                                                 name="telepon" value="{{ $models->telepon }}">
                                             @error('telepon')
-                                                <div class="alert alert-danger mt-2">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="password">Password</label><span class="text-warning"> (password minimal terdiri dari 8 karakter)</span>
-                                            <input type="password" id="password-vertical" class="form-control"
-                                                name="password" value="">
-                                            @error('password')
                                                 <div class="alert alert-danger mt-2">
                                                     {{ $message }}
                                                 </div>

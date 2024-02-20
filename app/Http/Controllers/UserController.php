@@ -96,6 +96,7 @@ class UserController extends Controller
         return view('admin.user_update',[
             'models' => Model::findOrfail($id),
             'title' => 'Update Data User',
+            'route' => 'user.update',
             'button' => 'UPDATE',
         ]);
             
@@ -106,33 +107,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'nullable|min:8',
-            'akses' => 'required',
-            'alamat' => 'required',
-            'telepon' => 'required',
-        ]);
-
-        //get post by ID
-        $models = Model::findOrFail($id);
-            //update post without image
-            $models->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'akses' => $request->akses,
-                'alamat' => $request->alamat,
-                'telepon' => $request->telepon,
-                'password' => Hash::make($request->password)
-            ]);
-            if (! empty($request->get('password'))) {
-                $models->password = Hash::make($request->password);
-            }
-
-        //redirect to index
-        Alert::success('Hore!', 'data berhasil diUpdate!');
-        return back();
+        return $id;
     }
 
     /**
