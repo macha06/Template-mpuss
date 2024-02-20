@@ -4,13 +4,13 @@
 <div class="page-title">
 <div class="row">
     <div class="col-12 col-md-6 order-md-1 order-last">
-        <h3>Create Data User</h3>
+        <h3>{{ $title }}</h3>
     </div>
     <div class="col-12 col-md-6 order-md-2 order-first">
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Data User</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin.beranda') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Data User</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Create Data User</li>
             </ol>
         </nav>
@@ -24,9 +24,18 @@
                 <div class="card-header">
                     <h4 class="card-title">Tambah User</h4>
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-vertical" action="{{ route('user.store') }}" method="post">
+                        <form class="form form-vertical" action="{{ route($route) }}" method="post">
                             @csrf
                             <div class="form-body">
                                 <div class="row">
@@ -35,20 +44,6 @@
                                             <label for="name">Nama Lengkap</label>
                                             <input type="text" id="first-name-vertical" class="form-control"
                                                 name="name" placeholder="Nama Lengkap">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="first-name-vertical">Username</label>
-                                            <input type="text" id="first-name-vertical" class="form-control"
-                                                name="username" placeholder="Username">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="nik">Nik</label>
-                                            <input type="text" id="first-name-vertical" class="form-control"
-                                                name="nik" placeholder="Nik">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -67,7 +62,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="password">Password</label>
+                                            <label for="password">Password</label><span class="text-warning"> (password minimal terdiri dari 8 karakter)</span>
                                             <input type="password" id="password-vertical" class="form-control"
                                                 name="password" placeholder="Password">
                                         </div>
@@ -110,6 +105,7 @@
             </div>
         </div>
     </div>
+
 </section>
 </div>
 @endsection

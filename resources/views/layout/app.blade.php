@@ -13,7 +13,7 @@
         @include('layout.sidebar')
         <div id="main">
             @include('layout.header')
-            @include('flash::message')
+            @include('sweetalert::alert')
             @yield('konten')
             @include('layout.footer')
         </div>

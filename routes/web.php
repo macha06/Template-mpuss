@@ -47,7 +47,6 @@ Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
 
 Route::prefix('petugas')->middleware(['auth', 'auth.petugas'])->group(function () {
     Route::get('beranda', [PetugasBerandaController::class, 'index'])->name('petugas.beranda');
-    Route::resource('user', UserController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('buku', BukuController::class);
 });

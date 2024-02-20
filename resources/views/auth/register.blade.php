@@ -35,15 +35,6 @@
               @enderror
           </div>
           <div class="input-field">
-            <label for="username">Username</label>
-            <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" username="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-              @error('username')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-          </div>
-          <div class="input-field">
             <label for="email">Email *</label>
             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
               @error('email')
@@ -54,7 +45,7 @@
           </div>
           <div class="input-field">
             <label for="alamat">Alamat</label>
-            <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" alamat="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus>
+            <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat" autofocus>
               @error('alamat')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -63,17 +54,8 @@
           </div>
           <div class="input-field">
             <label for="telepon">telepon</label>
-            <input id="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" telepon="telepon" value="{{ old('telepon') }}" required autocomplete="telepon" autofocus>
+            <input id="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ old('telepon') }}" required autocomplete="telepon" autofocus>
               @error('telepon')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-          </div>
-          <div class="input-field">
-            <label for="nik">nik</label>
-            <input id="nik" type="text" class="form-control @error('nik') is-invalid @enderror" nik="nik" value="{{ old('nik') }}"required autocomplete="nik"  autofocus>
-              @error('nik')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                   </span>
