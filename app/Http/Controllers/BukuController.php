@@ -147,7 +147,7 @@ class BukuController extends Controller
         //delete buku
         $buku->delete();
 
-        Alert::success('Hore!', 'data berhasil diupdate');
+        Alert::success('Hore!', 'data berhasil dihapus');
         //redirect to index
         return redirect()->route('buku.index');
     }

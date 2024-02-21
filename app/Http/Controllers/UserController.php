@@ -120,7 +120,7 @@ class UserController extends Controller
         }else{
             $requestData['password'] = Hash::make($requestData['password']);
         }
-        $model->fil($requestData);
+        $model->fill($requestData);
         $model->save();
         Alert::success('Hore!', 'data berhasil diupdate');
         return redirect()

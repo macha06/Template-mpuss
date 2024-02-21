@@ -5,7 +5,7 @@
           <i class="fa-solid fa-user-group"></i>
         </div>
         <div class="content">
-          <h4 class="count">125,663</h4>
+          <h4 class="count">{{ $user->count() }}</h4>
           <small>Jumlah Peminjam</small>
         </div>
       </div>
@@ -14,7 +14,7 @@
           <i class="fa-solid fa-book"></i>
         </div>
         <div class="content">
-          <h4 class="count">50,672</h4>
+          <h4 class="count">{{ $buku->count() }}</h4>
           <small>Jumlah Buku</small>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <i class="fa-solid fa-hand-holding"></i>
         </div>
         <div class="content">
-          <h4 class="count">1,562</h4>
+          <h4 class="count">0</h4>
           <small>Buku Yg terpinjam</small>
         </div>
       </div>
@@ -32,7 +32,7 @@
           <i class="fa-solid fa-bookmark"></i>
         </div>
         <div class="content">
-          <h4 class="count">457</h4>
+          <h4 class="count">2</h4>
           <small>kategori</small>
         </div>
       </div>

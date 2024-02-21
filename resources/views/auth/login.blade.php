@@ -43,8 +43,6 @@
                   </span>
               @enderror
           </div>
-          
-          <p>Forgot Password ?<a href=""> Click Here</a></p>
           <button type="submit" class="btn btn-primary" >Login Account</button>
           <p>Don't Have an Account ? <a href="{{ route('register') }}">Create Account</a></p>
         </div>

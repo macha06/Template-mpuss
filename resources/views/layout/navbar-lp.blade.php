@@ -22,10 +22,7 @@
           </div>
           <button class="close"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="pages/service.html">Layanan</a></li>
-        <li><a href="pages/contact.html">Kontak</a></li>
-        <li><a href="{{ url('search-book') }}">Buku</a></li>
+        <li><a href="#">Home</a></li>
         <button class="login"><a href="{{ route('login') }}" >Log In</a></button>
         <button class="signup">
           <i class="fa-solid fa-user"></i><a href="{{ route('register') }}">Sign Up</a>

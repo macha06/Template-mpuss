@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\AdminBerandaController;
+use App\Http\Controllers\BukuLandingControlller;
 use App\Http\Controllers\BukuPeminjamController;
 use App\Http\Controllers\PetugasBerandaController;
 use App\Http\Controllers\PeminjamBerandaController;
@@ -22,9 +23,7 @@ use App\Http\Controllers\PeminjamBerandaController;
 |
 */
 #Auth
-Route::get('/', function () {
-    return view('landing-page');
-});
+Route::get('/', [BukuLandingControlller::class, 'index']);
 #Route::get('/login', function () {
    # return view('auth.login');
 #});

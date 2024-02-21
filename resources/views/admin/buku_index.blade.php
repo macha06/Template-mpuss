@@ -28,7 +28,6 @@
                         </h5>
                         <a href="{{ route('buku.create') }}" class="btn btn-primary">Tambah data</a>
                     </div>
-                    <a href="{{ url('admin/buku/create') }}" class="btn btn-primary">Cetak Laporan data Buku</a>
                     <div class="form-outline" data-mdb-input-init>
                         <input type="search" id="form1" class="form-control mt-3" placeholder="Search...." aria-label="Search" />
                     </div>
@@ -62,7 +61,13 @@
                                         <img src="{{ Storage::url('public/buku/').$item->gambar }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $item->deskripsi }}</td>
-                                    <td>{{ $item->kategori }}</td>
+                                    <td>
+                                        @if ($item->kategori == '0')
+                                            <span class="badge bg-primary">fiksi</span>
+                                        @elseif ($item->kategori == '1')
+                                            <span class="badge bg-success">non fiksi</span>
+                                        @endif
+                                    </td>
                                     <td>{{ $item->stok }}</td>
                                     <td>                 
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('buku.destroy', $item->id) }}" method="POST">

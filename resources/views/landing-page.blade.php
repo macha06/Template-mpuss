@@ -19,8 +19,7 @@
             menyediakan layanan perpustakaan online untuk meminjam buku tanpa harus Mengantri
           </p>
           <div class="btns">
-            <button>Pinjam Buku ?<i class="fa-solid fa-arrow-right"></i></button>
-            <button>Masuk</button>
+            <button>Masuk<i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
         <div class="img">
@@ -37,7 +36,6 @@
 
     @include('layout.service')
 
-    @include('layout.sugest')
     @include('layout.rekomendasi')
     @include('layout.countdown')
     @include('layout.subs')
